@@ -3,8 +3,9 @@ import Grid from '@mui/material/Grid';
 import Eachevent from './Eachevent';
 import axios from 'axios';
 function Allevents({eventsArray,seteventsArray}) {
+    const URL_DOMAIN=process.env.NODE_ENV==='production'?'https://all-events-assignment.herokuapp.com/':'http://localhost:3001/';
     useEffect(() => {
-        axios.get('http://localhost:3001/eventsapi/getlistofevents').then(res => {
+        axios.get(URL_DOMAIN+'eventsapi/getlistofevents').then(res => {
         seteventsArray(res.data.eventList)
       }).catch(err => {
         console.log(err);

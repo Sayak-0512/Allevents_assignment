@@ -5,9 +5,10 @@ import MenuItem from '@mui/material/MenuItem';
 import SearchIcon from '@mui/icons-material/Search';
 import axios from "axios"
 function Filter({seteventsArray}) {
+    const URL_DOMAIN=process.env.NODE_ENV==='production'?'https://all-events-assignment.herokuapp.com/':'http://localhost:3001/';
     const [citiesList, setcitiesList] = React.useState(() => new Set())
     useEffect(() => {
-        axios.get('http://localhost:3001/eventsapi/getlistofevents').then(res => {
+        axios.get(URL_DOMAIN+'eventsapi/getlistofevents').then(res => {
         res.data.eventList.map(event => 
             setcitiesList(prev => new Set(prev).add(event.location))
         )
@@ -31,7 +32,7 @@ function Filter({seteventsArray}) {
     }
 
     useEffect(() => {
-        axios.get('http://localhost:3001/eventsapi/getlistofevents',{
+        axios.get(URL_DOMAIN+'eventsapi/getlistofevents',{
             params: {
                 event_category: categorySearch,
                 location: citySearch,

@@ -13,7 +13,7 @@ import "./Login.css"
 // google-client-id= 367170922771-sb5lb6r4d8tmsejf8v24gka1t8i88016.apps.googleusercontent.com
 // google-client-secret= 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
 function Login({setloggedIn,setprofileName,setprofileUrl}) {
-
+    const URL_DOMAIN=process.env.NODE_ENV==='production'?'https://all-events-assignment.herokuapp.com/':'http://localhost:3001/';
     const theme = useTheme();
     const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
     const responseFailureGoogle= (response) =>{
@@ -25,7 +25,7 @@ function Login({setloggedIn,setprofileName,setprofileUrl}) {
         setprofileUrl(response.profileObj.imageUrl)
         axios({
           method: "POST",
-          url: "http://localhost:3001/api/googlelogin",
+          url: URL_DOMAIN+"api/googlelogin",
           data: {tokenId: response.tokenId}
         }).then(response => {
           localStorage.setItem("_allevents_token", response.data.token);

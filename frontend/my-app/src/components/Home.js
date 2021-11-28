@@ -23,6 +23,8 @@ import Filter from "./Filter"
 import axios from 'axios';
 
 const Home = ({profileName, profileUrl}) => {
+  const URL_DOMAIN=process.env.NODE_ENV==='production'?'https://all-events-assignment.herokuapp.com/':'http://localhost:3001/';
+  
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -89,7 +91,7 @@ const handleUpload=(event) => {
  {
    axios({
     method: "POST",
-    url: "http://localhost:3001/eventsapi/addevent",
+    url: URL_DOMAIN+"eventsapi/addevent",
     data: {eventObj: eventObj, token: localStorage.getItem("_allevents_token")}
   }).then(response => {
     console.log(response);
