@@ -1,0 +1,4 @@
+# No node modules
+node_modules
+# No env file
+.env

@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+.g-login{
+    border: 1px solid #092949 !important;
+}
+.g-login span{
+    font-size: 150%;
+    color: #092949;
+}
+.home{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(https://www.transparenttextures.com/patterns/axiom-pattern.png);
+}
+.wrapper-box{
+    margin-top: 100px;
+    border-radius: 2px;
+    background-image: linear-gradient(#1976d2 , #83baf0);
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+.login-heading{
+    font-family: 'Roboto Condensed', sans-serif;
+    text-align: center;
+    color: #fff;
+    font-size: 200%;
+}
