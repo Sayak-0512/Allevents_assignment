@@ -10,8 +10,6 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import "./Login.css"
-// google-client-id= 367170922771-sb5lb6r4d8tmsejf8v24gka1t8i88016.apps.googleusercontent.com
-// google-client-secret= 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
 function Login({setloggedIn,setprofileName,setprofileUrl}) {
     const URL_DOMAIN=process.env.NODE_ENV==='production'?'https://all-events-assignment.herokuapp.com/':'http://localhost:3001/';
     const theme = useTheme();
@@ -20,7 +18,6 @@ function Login({setloggedIn,setprofileName,setprofileUrl}) {
         console.log(response);
       }
       const responseSuccessGoogle= (response) =>{
-        console.log(response);
         setprofileName(response.profileObj.name)
         setprofileUrl(response.profileObj.imageUrl)
         axios({
@@ -30,7 +27,6 @@ function Login({setloggedIn,setprofileName,setprofileUrl}) {
         }).then(response => {
           localStorage.setItem("_allevents_token", response.data.token);
           setloggedIn(true);
-          console.log("Google login success",response);
         })
       }
 
