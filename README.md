@@ -16,15 +16,15 @@ STEP 5:-
 `npm i`
 
 STEP 6:-
-`cd ..`
+`cd ../..`
 
 STEP 7:-
 Make a .env file in the root directory
 
 STEP 8:-
-In the .env file enter following two data(without brackets)
-JWT_SIGNIN_KEY=[A random long string]
-MONGOURL=[Mongodb atlas connection string url]
+In the .env file enter following two data(without brackets)\
+JWT_SIGNIN_KEY=[A random long string]\
+MONGOURL=[Mongodb atlas connection string url]\
 
 STEP 9:-
 `npm run dev`
